@@ -6,6 +6,7 @@
       <li>{{data[0].recovered}}</li>
     </ul>
   </div>
+
 </template>
 <script>
 import TestAPI from '../../services/testapi.js'
