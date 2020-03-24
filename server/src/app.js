@@ -18,7 +18,7 @@ app.get('/todo', (req, res) => {
   })
 
 app.get('/us', (req, res) => {
-  axios.get('https://coronavirus-tracker-api.herokuapp.com/v2/locations?source=csbs')
+  axios.get('https://coronavirus-tracker-api.herokuapp.com/v2/locations?country_code=US')
   .then(response => {
     res.send([
       response.data.latest
@@ -38,7 +38,7 @@ app.get('/us-cases', (req, res) => {
 
   })
   .catch(error => {
-    console.log(error);
+    console.log("This is error",error);
   });
 })
 

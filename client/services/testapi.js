@@ -7,4 +7,5 @@ export default {
   getUSData() {
     return API().get('/us')
   }
+  
 }
