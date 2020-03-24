@@ -10,9 +10,11 @@
   "dependencies": {
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
+    "bootstrap-table": "^1.16.0",
     "bootstrap-vue": "^2.8.0",
     "core-js": "^3.6.4",
     "eslint-loader": "^3.0.3",
+    "jquery": "^3.4.1",
     "vue": "^2.6.11",
     "vue-fixed-header": "^3.2.14",
     "vue-graph": "^0.8.7",

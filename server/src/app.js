@@ -18,7 +18,7 @@ app.get('/todo', (req, res) => {
   })
 
 app.get('/us', (req, res) => {
-  axios.get('https://coronavirus-tracker-api.herokuapp.com/v2/locations?source=csbs')
+  axios.get('https://coronavirus-tracker-api.herokuapp.com/v2/locations?country_code=US')
   .then(response => {
     res.send([
       response.data.latest
@@ -29,5 +29,19 @@ app.get('/us', (req, res) => {
     console.log(error);
   });
 })
+app.get('/us-cases', (req, res) => {
+  axios.get('https://coronavirus-tracker-api.herokuapp.com/v2/locations?country_code=US')
+  .then(response => {
+    res.send([
+      response.data.locations
+    ])
+
+  })
+  .catch(error => {
+    console.log("This is error",error);
+  });
+})
+
+
 
 app.listen(process.env.PORT || 8081) // client is already running on 8080

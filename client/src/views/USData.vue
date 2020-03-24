@@ -18,6 +18,7 @@
     </graph-pie>
 
   </div>
+
 </template>
 <script>
 import TestAPI from '../../services/testapi.js'
