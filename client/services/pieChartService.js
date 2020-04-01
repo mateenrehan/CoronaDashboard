@@ -10,5 +10,4 @@ export default {
   getItalyData() {
     return Service().get('/italy')
   }
-  
 }
