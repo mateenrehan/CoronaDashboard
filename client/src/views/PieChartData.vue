@@ -6,8 +6,26 @@
     <div class="btn-group mr-4" role="group" aria-label="Third group">
       <button type="button" class="btn btn-dark" v-on:click="change('worldwide')">Worldwide</button>
     </div>
-    <div class="btn-group" role="group" aria-label="Third group">
+    <div class="btn-group mr-4" role="group" aria-label="Third group">
       <button type="button" class="btn btn-dark" v-on:click="change('italy')">Italy</button>
+    </div>
+     <div class="btn-group mr-4" role="group" aria-label="Third group">
+      <button type="button" class="btn btn-dark" v-on:click="change('canada')">Canada</button>
+    </div>
+      <div class="btn-group mr-4" role="group" aria-label="Third group">
+      <button type="button" class="btn btn-dark" v-on:click="change('iran')">Iran</button>
+    </div>
+      <div class="btn-group mr-4" role="group" aria-label="Third group">
+      <button type="button" class="btn btn-dark" v-on:click="change('germany')">Germany</button>
+    </div>
+      <div class="btn-group mr-4" role="group" aria-label="Third group">
+      <button type="button" class="btn btn-dark" v-on:click="change('uk')">UK</button>
+    </div>
+      <div class="btn-group mr-4" role="group" aria-label="Third group">
+      <button type="button" class="btn btn-dark" v-on:click="change('china')">China</button>
+    </div>
+      <div class="btn-group" role="group" aria-label="Third group">
+      <button type="button" class="btn btn-dark" v-on:click="change('india')">India</button>
     </div>
     <graph-pie
             :width="500"
@@ -39,7 +57,8 @@ export default {
       names: [],
       usa: Boolean,
       worldwide: Boolean,
-      italy: Boolean
+      italy: Boolean,
+      canada: Boolean,
     }
   },
   mounted () {
@@ -61,17 +80,102 @@ export default {
         this.usa = false;
         this.worldwide = true;
         this.italy = false;
+        this.canada = false;
+        this.germany=false;
+        this.china=false;
+        this.india=false;
+        this.uk=false;
+        this.iran=false;
         this.response = await PieChartService.getWorldwideData();
         console.log(this.response);
       } else if (params === "italy") {
         this.italy = true;
         this.worldwide = false;
         this.usa = false;
+        this.india=false;
+        this.uk=false;
+        this.germany=false;
+        this.china=false;
+        this.iran=false;
+        this.canada=false;
         this.response = await PieChartService.getItalyData();
-      } else {
+      } else if (params === "canada") {
+        this.canada = true;
+        this.worldwide = false;
+        this.usa = false;
+        this.germany=false;
+        this.iran=false;
+        this.china=false;
+        this.india=false;
+        this.uk=false;
+        this.italy=false;
+        this.response = await PieChartService.getCanadaData();
+      }else if (params === "iran") {
+        this.iran = true;
+        this.worldwide = false;
+        this.usa = false;
+        this.canada = false;
+        this.germany=false;
+        this.china=false;
+        this.india=false;
+        this.uk=false;
+        this.italy=false;
+        this.response = await PieChartService.getIranData();
+      }else if (params === "germany") {
+        this.germany = true;
+        this.worldwide = false;
+        this.usa = false;
+        this.canada = false;
+        this.iran=false;
+        this.china=false;
+        this.india=false;
+        this.uk=false;
+        this.italy=false;
+        this.response = await PieChartService.getGermanyData();
+      }else if (params === "uk") {
+        this.uk = true;
+        this.worldwide = false;
+        this.usa = false;
+        this.canada = false;
+        this.germany=false;
+        this.iran=false;
+        this.china=false;
+        this.india=false;
+        this.italy=false;
+        this.response = await PieChartService.getUKData();
+      }else if (params === "china") {
+        this.china = true;
+        this.worldwide = false;
+        this.usa = false;
+        this.canada = false;
+        this.germany=false;
+        this.iran=false;
+        this.india=false;
+        this.uk=false;
+        this.italy=false;
+        this.response = await PieChartService.getChinaData();
+      }else if (params === "india") {
+        this.india = true;
+        this.worldwide = false;
+        this.usa = false;
+        this.canada = false;
+        this.germany = false;
+        this.china =false;
+        this.iran=false;
+        this.uk=false;
+        this.italy=false;
+        this.response = await PieChartService.getIndiaData();
+      }
+      else {
         this.usa = true;
         this.worldwide = false;
         this.italy = false;
+        this.canada = false;
+        this.germany=false;
+        this.iran=false;
+        this.china=false;
+        this.india=false;
+        this.uk=false;
         this.response = await PieChartService.getUSData();
       }
       this.loadData();
