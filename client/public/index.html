@@ -13,44 +13,32 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">Home</a>
-      <H3 class="navbar-brand col-sm-3 mx-auto">Corona Dashboard</H3>
+    <nav class="navbar navbar-dark fixed-top flex-md-nowrap p-0 shadow" style="background-color: #116466;">
+      <!-- <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">Home</a> -->
+      <H3 class="navbar-brand mx-auto text-center">Corona Dashboard</H3>
     </nav>
     
-    <div class="container-fluid">
+    <div class="container-fluid" >
       <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar mt-5">
+        <nav class="col-md-2 d-none d-md-block sidebar mt-5" style="background-color: #38f0f3">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="/#/usa">
-                  <span data-feather="home"></span>
-                  USA Pie Chart <span class="sr-only">(current)</span>
+                <a class="nav-link active" href="/#/">
+                  <span data-feather="Chart"></span>
+                  Pie Chart
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/#/us-cases">
                   <span data-feather="file"></span> 
-                  USA Province Data
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
-                  Pie Chart Per Country
+                  USA Statewise Data
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="users"></span>
-                  Timeline Per Country
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="bar-chart-2"></span>
-                  Worldwide Pie Chart
+                  Timeline Graph
                 </a>
               </li>
               <li class="nav-item">
@@ -79,5 +67,17 @@
 </html>
 
 <style lang="css">
+
+  ul.nav li a, ul.nav li a:visited {
+    color: white !important;
+  }
+
+  ul.nav li a:hover {
+      color: rgb(234, 22, 22) !important;
+  }
+
+  ul.nav li:active a {
+      color: black !important;
+  } 
 </style>
   
