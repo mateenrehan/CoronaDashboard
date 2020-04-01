@@ -1,26 +1,26 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Dashboard from '../views/Dashboard.vue'
-import USData from '../views/USData.vue'
+import PieChartData from '../views/PieChartData.vue'
+import TimelineGraphData from '../views/TimelineGraphData.vue'
 import USCasesData from '../views/USCasesData.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/todo',
-    name: 'Dashboard',
-    component: Dashboard
-  },
-  {
-    path: '/usa',
-    name: 'US Data',
-    component: USData
+    path: '/',
+    name: 'Pie Chart Data',
+    component: PieChartData
   },
   {
     path: '/us-cases',
     name: 'US cases Data',
     component: USCasesData
+  },
+  {
+    path: '/timeline',
+    name: 'Timeline Graph Data',
+    component: TimelineGraphData
   }
 ]
 

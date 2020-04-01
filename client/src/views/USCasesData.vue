@@ -1,40 +1,32 @@
 <template lang="html">
   <div class="table-responsive">
-      <table class="mt-1 table table-striped table-bordered">
-        <thead>
-          <tr>
-                <th>Province Name</th>
-                <!-- <th>Latitude</th>
-                <th>Longitude</th> -->
-                <th>Number of Cases</th>
-                <th>Number of Deaths</th>
-                <th>Number of Revovered</th>
-          </tr>
-        </thead>
-        <tbody>
-                <tr v-for="(value, key) in data[0].province" :key="key">
-                  <td>{{value.province}}</td>
-                  <!-- <td>{{value.coordinates.latitude}}</td>
-                  <td>{{value.coordinates.longitude}}</td> -->
-                  <td>{{value.latest.confirmed}}</td>
-                  <td>{{value.latest.deaths}}</td>
-                  <td>{{value.latest.recovered}}</td>
-                </tr>
-        </tbody>
-              <!-- <li>{{data[0].province}}</li> -->
-      </table>
+    <b-spinner label="Spinning" v-if='loading' style="margin: 300px 500px"></b-spinner>
+    <ag-grid-vue style="width: 1000px; height: 500px;"
+      class="ag-theme-balham table-responsive"
+      :columnDefs="columnDefs"
+      :rowData="rowData">
+    </ag-grid-vue>
   </div>
-
 </template>
 
 <script>
 // Loading US cases Data province wise
 import USCasesAPI from '../../services/usCases-api'
+import "ag-grid-community/dist/styles/ag-grid.css";
+import "ag-grid-community/dist/styles/ag-theme-balham.css";
+import { AgGridVue } from 'ag-grid-vue';
+
 export default {
   data () {
     return {
-      data: []
+      data: [],
+      columnDefs: [],
+      rowData: [],
+      loading: Boolean
     }
+  },
+  components: {
+      AgGridVue
   },
   mounted () {
     this.loadUSCasesData()
@@ -42,16 +34,27 @@ export default {
   methods: {
       // For each province get the number of cases, deaths and recovered
     async loadUSCasesData () {
+      this.loading = true;
       const response= await USCasesAPI.getUSCasesData()
       console.log("Response:" ,response.data)
-      console.log("Country:",response.data[0][0].latest)
       this.data = [{
-        province: response.data[0],
+        row: response.data[0],
         // confirmed: response.data[0].latest,
         // deaths: response.data[0].latest.deaths,
         // recovered: response.data[0].latest.recovered
       }]
-      console.log(this.data[0])
+      this.columnDefs = [
+        {headerName: 'State Name', field: 'stateName', sortable:true},
+        {headerName: 'County Name', field:'countyName', sortable:true},
+        {headerName: 'Number of Cases',field: 'numberOfCases', sortable:true},
+        {headerName: 'Number of Deaths', field: 'numberOfDeaths', sortable:true},
+        {headerName: 'Number of Recovered', field: 'numberOfRecovered', sortable:true},
+      ]
+      response.data[0].forEach(row => {
+        this.rowData.push({stateName: row.province, countyName: row.county, numberOfCases: row.latest.confirmed, numberOfDeaths: row.latest.deaths, numberOfRecovered: row.latest. rocovered});
+      });
+      this.loading = false;
+      console.log(this.rowData);
     }
 
   }

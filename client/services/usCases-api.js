@@ -1,6 +1,6 @@
-import API from '../services/api.js'
+import Service from './service.js'
 export default {
   getUSCasesData() {
-    return API().get('/us-cases')
+    return Service().get('/us-cases')
   }
 }
