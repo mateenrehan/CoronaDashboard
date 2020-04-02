@@ -180,4 +180,82 @@ app.get('/italy-timeline', (req, res) => {
     console.log(error);
   });
 })
+
+app.get('/canada-timeline', (req, res) => {
+  axios.get('https://corona.lmao.ninja/v2/historical/Canada/')
+  .then(response => {
+    res.send([
+      response.data.timeline
+    ])
+
+  })
+  .catch(error => {
+    console.log(error);
+  });
+})
+
+app.get('/iran-timeline', (req, res) => {
+  axios.get('https://corona.lmao.ninja/v2/historical/Iran/')
+  .then(response => {
+    res.send([
+      response.data.timeline
+    ])
+
+  })
+  .catch(error => {
+    console.log(error);
+  });
+})
+
+app.get('/germany-timeline', (req, res) => {
+  axios.get('https://corona.lmao.ninja/v2/historical/Germany/')
+  .then(response => {
+    res.send([
+      response.data.timeline
+    ])
+
+  })
+  .catch(error => {
+    console.log(error);
+  });
+})
+
+app.get('/uk-timeline', (req, res) => {
+  axios.get('https://corona.lmao.ninja/v2/historical/uk/')
+  .then(response => {
+    res.send([
+      response.data.timeline
+    ])
+
+  })
+  .catch(error => {
+    console.log(error);
+  });
+})
+
+app.get('/china-timeline', (req, res) => {
+  axios.get('https://corona.lmao.ninja/v2/historical/china/')
+  .then(response => {
+    res.send([
+      response.data.timeline
+    ])
+
+  })
+  .catch(error => {
+    console.log(error);
+  });
+})
+
+app.get('/india-timeline', (req, res) => {
+  axios.get('https://corona.lmao.ninja/v2/historical/india/')
+  .then(response => {
+    res.send([
+      response.data.timeline
+    ])
+
+  })
+  .catch(error => {
+    console.log(error);
+  });
+})
 app.listen(process.env.PORT || 8081) // client is already running on 8080
