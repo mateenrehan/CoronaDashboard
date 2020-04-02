@@ -42,6 +42,78 @@ app.get('/italy', (req, res) => {
     console.log(error);
   });
 })
+app.get('/canada', (req, res) => {
+  axios.get('https://corona.lmao.ninja/countries/canada')
+  .then(response => {
+    res.send([
+      response.data
+    ])
+
+  })
+  .catch(error => {
+    console.log(error);
+  });
+})
+app.get('/iran', (req, res) => {
+  axios.get('https://corona.lmao.ninja/countries/iran')
+  .then(response => {
+    res.send([
+      response.data
+    ])
+
+  })
+  .catch(error => {
+    console.log(error);
+  });
+})
+app.get('/germany', (req, res) => {
+  axios.get('https://corona.lmao.ninja/countries/germany')
+  .then(response => {
+    res.send([
+      response.data
+    ])
+
+  })
+  .catch(error => {
+    console.log(error);
+  });
+})
+app.get('/uk', (req, res) => {
+  axios.get('https://corona.lmao.ninja/countries/uk')
+  .then(response => {
+    res.send([
+      response.data
+    ])
+
+  })
+  .catch(error => {
+    console.log(error);
+  });
+})
+app.get('/china', (req, res) => {
+  axios.get('https://corona.lmao.ninja/countries/china')
+  .then(response => {
+    res.send([
+      response.data
+    ])
+
+  })
+  .catch(error => {
+    console.log(error);
+  });
+})
+app.get('/india', (req, res) => {
+  axios.get('https://corona.lmao.ninja/countries/india')
+  .then(response => {
+    res.send([
+      response.data
+    ])
+
+  })
+  .catch(error => {
+    console.log(error);
+  });
+})
 
 app.get('/us-cases', (req, res) => {
   axios.get('https://coronavirus-tracker-api.herokuapp.com/v2/locations?source=csbs')
