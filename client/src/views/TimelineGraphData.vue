@@ -10,15 +10,16 @@
       <button type="button" class="btn btn-dark" v-on:click="change('italy')">Italy</button>
     </div>
       <graph-line-dateblock
-            :width="600"
-            :height="400"
+            :width="1100"
+            :height="500"
             :axis-min="0"
-            :axis-max="100"
+            :axis-max="auto"
             :axis-reverse="false"
-            :axis-format="'HH:mm'"
-            :axis-interval="1000 * 60 * 60 * 8"
-            :values="values">
-        <note :text="'Line Chart'"></note>
+            :axis-format="'dd-MMM'"
+            :axis-interval="1000 * 60 * 60 * 24 * 5"
+            :labels="labels"
+            :values="values"
+            :colors="[ '#9c5a03', '#c70000', '#0b9c03' ]">
         <legends :names="names"></legends>
         <tooltip :names="names" :position="'right'"></tooltip>
         <guideline :tooltip-x="true" :tooltip-y="true"></guideline>
@@ -34,6 +35,7 @@ export default {
     return {
       response: [],
       values: [],
+      labels:[],
       names: [],
       usa: Boolean,
       worldwide: Boolean,
@@ -45,26 +47,39 @@ export default {
   },
   methods: {
     async loadData() {
-      this.names = ['confirmed','deaths','recovered'];
+      this.names = ['confirmed', 'deaths', 'recovered'];
       this.values = [];
-      // this.response.data[0].timeline.cases.forEach(row => {
-      //   console.log(row);
-      // })
-      const cases = this.response.data[0].timeline.cases;
-      const deaths = this.response.data[0].timeline.deaths;
-      const recovered = this.response.data[0].timeline.recovered;
+      this.labels = [];
+      const confirmedValue = [];
+      const deathsValue = [];
+      const recoveredValue = [];
 
-      console.log(cases);
-      console.log(deaths);
-      console.log(recovered);
+      const cases = this.response.data[0].cases;
+      const deaths = this.response.data[0].deaths;
+      const recovered = this.response.data[0].recovered;
 
-      console.log(this.response.data[0].timeline);
+      console.log(typeof(cases));
+      console.log(typeof(deaths));
+      console.log(typeof(recovered));
+      
+      for (let [key, value] of Object.entries(cases)) {
+        this.labels.push(new Date(key));
+        confirmedValue.push(value);
+      }
 
-    },
+      for (let [key, value] of Object.entries(deaths)) {
+        console.log(key);
+        deathsValue.push(value);
+      }
 
-    dataFormat: function(a, b) {
-      if(b) return b;
-      return a;
+      for (let [key, value] of Object.entries(recovered)) {
+        console.log(key);
+        recoveredValue.push(value);
+      }
+
+      this.values = [confirmedValue, deathsValue, recoveredValue];
+      console.log(this.values)
+      console.log(this.labels)
     },
 
     async change(params) {
