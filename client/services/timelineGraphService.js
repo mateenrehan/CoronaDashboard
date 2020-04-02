@@ -9,6 +9,24 @@ export default {
   },
   getItalyData() {
     return Service().get('/italy-timeline')
+  },
+  getCanadaData() {
+    return Service().get('/canada-timeline')
+  },
+  getIranData() {
+    return Service().get('/iran-timeline')
+  },
+  getGermanyData() {
+    return Service().get('/germany-timeline')
+  },
+  getUKData() {
+    return Service().get('/uk-timeline')
+  },
+  getChinaData() {
+    return Service().get('/china-timeline')
+  },
+  getIndiaData() {
+    return Service().get('/india-timeline')
   }
   
 }

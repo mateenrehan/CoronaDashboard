@@ -64,8 +64,7 @@ export default {
       germany: Boolean,
       uk: Boolean,
       china: Boolean,
-      india: Boolean,
-
+      india: Boolean
     }
   },
   mounted () {
@@ -172,8 +171,7 @@ export default {
         this.china=false;
         this.india=true;
         this.response = await PieChartService.getIndiaData();
-      }
-      else {
+      } else {
         this.usa=true;
         this.worldwide=false;
         this.italy=false;

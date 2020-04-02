@@ -6,8 +6,26 @@
     <div class="btn-group mr-4" role="group" aria-label="Third group">
       <button type="button" class="btn btn-dark" v-on:click="change('worldwide')">Worldwide</button>
     </div>
-    <div class="btn-group" role="group" aria-label="Third group">
+    <div class="btn-group mr-4" role="group" aria-label="Third group">
       <button type="button" class="btn btn-dark" v-on:click="change('italy')">Italy</button>
+    </div>
+    <div class="btn-group mr-4" role="group" aria-label="Third group">
+      <button type="button" class="btn btn-dark" v-on:click="change('canada')">Canada</button>
+    </div>
+      <div class="btn-group mr-4" role="group" aria-label="Third group">
+      <button type="button" class="btn btn-dark" v-on:click="change('iran')">Iran</button>
+    </div>
+      <div class="btn-group mr-4" role="group" aria-label="Third group">
+      <button type="button" class="btn btn-dark" v-on:click="change('germany')">Germany</button>
+    </div>
+      <div class="btn-group mr-4" role="group" aria-label="Third group">
+      <button type="button" class="btn btn-dark" v-on:click="change('uk')">UK</button>
+    </div>
+      <div class="btn-group mr-4" role="group" aria-label="Third group">
+      <button type="button" class="btn btn-dark" v-on:click="change('china')">China</button>
+    </div>
+      <div class="btn-group" role="group" aria-label="Third group">
+      <button type="button" class="btn btn-dark" v-on:click="change('india')">India</button>
     </div>
       <graph-line-dateblock
             :width="1100"
@@ -39,7 +57,13 @@ export default {
       names: [],
       usa: Boolean,
       worldwide: Boolean,
-      italy: Boolean
+      italy: Boolean,
+      canada: Boolean,
+      iran: Boolean,
+      germany: Boolean,
+      uk: Boolean,
+      china: Boolean,
+      india: Boolean
     }
   },
   mounted () {
@@ -94,6 +118,72 @@ export default {
         this.worldwide = false;
         this.usa = false;
         this.response = await TimeLineGraphService.getItalyData();
+      } else if (params === "canada") {
+        this.usa=false;
+        this.worldwide=false;
+        this.italy=false;
+        this.canada=true;
+        this.iran=false;
+        this.germany=false;
+        this.uk=false;
+        this.china=false;
+        this.india=false;
+        this.response = await TimeLineGraphService.getCanadaData();
+      }else if (params === "iran") {
+        this.usa=false;
+        this.worldwide=false;
+        this.italy=false;
+        this.canada=false;
+        this.iran=true;
+        this.germany=false;
+        this.uk=false;
+        this.china=false;
+        this.india=false;
+        this.response = await TimeLineGraphService.getIranData();
+      }else if (params === "germany") {
+        this.usa=false;
+        this.worldwide=false;
+        this.italy=false;
+        this.canada=false;
+        this.iran=false;
+        this.germany=true;
+        this.uk=false;
+        this.china=false;
+        this.india=false;
+        this.response = await TimeLineGraphService.getGermanyData();
+      }else if (params === "uk") {
+       this.usa=false;
+        this.worldwide=false;
+        this.italy=false;
+        this.canada=false;
+        this.iran=false;
+        this.germany=false;
+        this.uk=true;
+        this.china=false;
+        this.india=false;
+        this.response = await TimeLineGraphService.getUKData();
+      }else if (params === "china") {
+      this.usa=false;
+        this.worldwide=false;
+        this.italy=false;
+        this.canada=false;
+        this.iran=false;
+        this.germany=false;
+        this.uk=false;
+        this.china=true;
+        this.india=false;
+        this.response = await TimeLineGraphService.getChinaData();
+      }else if (params === "india") {
+        this.usa=false;
+        this.worldwide=false;
+        this.italy=false;
+        this.canada=false;
+        this.iran=false;
+        this.germany=false;
+        this.uk=false;
+        this.china=false;
+        this.india=true;
+        this.response = await TimeLineGraphService.getIndiaData();
       } else {
         this.usa = true;
         this.worldwide = false;
