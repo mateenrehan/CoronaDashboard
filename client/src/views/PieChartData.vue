@@ -59,6 +59,12 @@ export default {
       worldwide: Boolean,
       italy: Boolean,
       canada: Boolean,
+      iran: Boolean,
+      germany: Boolean,
+      uk: Boolean,
+      china: Boolean,
+      india: Boolean,
+
     }
   },
   mounted () {
@@ -77,105 +83,105 @@ export default {
 
     async change(params) {
       if (params === "worldwide") {
-        this.usa = false;
-        this.worldwide = true;
-        this.italy = false;
-        this.canada = false;
+        this.usa=false;
+        this.worldwide=true;
+        this.italy=false;
+        this.canada=false;
+        this.iran=false;
         this.germany=false;
+        this.uk=false;
         this.china=false;
         this.india=false;
-        this.uk=false;
-        this.iran=false;
         this.response = await PieChartService.getWorldwideData();
         console.log(this.response);
       } else if (params === "italy") {
-        this.italy = true;
-        this.worldwide = false;
-        this.usa = false;
-        this.india=false;
-        this.uk=false;
-        this.germany=false;
-        this.china=false;
-        this.iran=false;
+        this.usa=false;
+        this.worldwide=false;
+        this.italy=true;
         this.canada=false;
+        this.iran=false;
+        this.germany=false;
+        this.uk=false;
+        this.china=false;
+        this.india=false;
         this.response = await PieChartService.getItalyData();
       } else if (params === "canada") {
-        this.canada = true;
-        this.worldwide = false;
-        this.usa = false;
-        this.germany=false;
+        this.usa=false;
+        this.worldwide=false;
+        this.italy=false;
+        this.canada=true;
         this.iran=false;
+        this.germany=false;
+        this.uk=false;
         this.china=false;
         this.india=false;
-        this.uk=false;
-        this.italy=false;
         this.response = await PieChartService.getCanadaData();
       }else if (params === "iran") {
-        this.iran = true;
-        this.worldwide = false;
-        this.usa = false;
-        this.canada = false;
+        this.usa=false;
+        this.worldwide=false;
+        this.italy=false;
+        this.canada=false;
+        this.iran=true;
         this.germany=false;
+        this.uk=false;
         this.china=false;
         this.india=false;
-        this.uk=false;
-        this.italy=false;
         this.response = await PieChartService.getIranData();
       }else if (params === "germany") {
-        this.germany = true;
-        this.worldwide = false;
-        this.usa = false;
-        this.canada = false;
+        this.usa=false;
+        this.worldwide=false;
+        this.italy=false;
+        this.canada=false;
         this.iran=false;
+        this.germany=true;
+        this.uk=false;
         this.china=false;
         this.india=false;
-        this.uk=false;
-        this.italy=false;
         this.response = await PieChartService.getGermanyData();
       }else if (params === "uk") {
-        this.uk = true;
-        this.worldwide = false;
-        this.usa = false;
-        this.canada = false;
-        this.germany=false;
+       this.usa=false;
+        this.worldwide=false;
+        this.italy=false;
+        this.canada=false;
         this.iran=false;
+        this.germany=false;
+        this.uk=true;
         this.china=false;
         this.india=false;
-        this.italy=false;
         this.response = await PieChartService.getUKData();
       }else if (params === "china") {
-        this.china = true;
-        this.worldwide = false;
-        this.usa = false;
-        this.canada = false;
-        this.germany=false;
-        this.iran=false;
-        this.india=false;
-        this.uk=false;
+      this.usa=false;
+        this.worldwide=false;
         this.italy=false;
+        this.canada=false;
+        this.iran=false;
+        this.germany=false;
+        this.uk=false;
+        this.china=true;
+        this.india=false;
         this.response = await PieChartService.getChinaData();
       }else if (params === "india") {
-        this.india = true;
-        this.worldwide = false;
-        this.usa = false;
-        this.canada = false;
-        this.germany = false;
-        this.china =false;
-        this.iran=false;
-        this.uk=false;
+        this.usa=false;
+        this.worldwide=false;
         this.italy=false;
+        this.canada=false;
+        this.iran=false;
+        this.germany=false;
+        this.uk=false;
+        this.china=false;
+        this.india=true;
         this.response = await PieChartService.getIndiaData();
       }
       else {
-        this.usa = true;
-        this.worldwide = false;
-        this.italy = false;
-        this.canada = false;
-        this.germany=false;
+        this.usa=true;
+        this.worldwide=false;
+        this.italy=false;
+        this.canada=false;
         this.iran=false;
+        this.germany=false;
+        this.uk=false;
         this.china=false;
         this.india=false;
-        this.uk=false;
         this.response = await PieChartService.getUSData();
       }
       this.loadData();
