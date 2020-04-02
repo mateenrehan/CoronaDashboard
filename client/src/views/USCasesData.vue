@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="table-responsive">
     <b-spinner label="Spinning" v-if='loading' style="margin: 300px 500px"></b-spinner>
-    <ag-grid-vue style="width: 1000px; height: 500px;"
+    <ag-grid-vue style="width: 1000px; height: 510px;"
       class="ag-theme-balham table-responsive"
       :columnDefs="columnDefs"
       :rowData="rowData">

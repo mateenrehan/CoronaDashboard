@@ -74,7 +74,7 @@ app.get('/us-timeline', (req, res) => {
   axios.get('https://corona.lmao.ninja/v2/historical/USA/')
   .then(response => {
     res.send([
-      response.data
+      response.data.timeline
     ])
 
   })
@@ -100,7 +100,7 @@ app.get('/italy-timeline', (req, res) => {
   axios.get('https://corona.lmao.ninja/v2/historical/Italy/')
   .then(response => {
     res.send([
-      response.data
+      response.data.timeline
     ])
 
   })

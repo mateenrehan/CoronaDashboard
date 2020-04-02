@@ -20,30 +20,30 @@
     
     <div class="container-fluid" >
       <div class="row">
-        <nav class="col-md-2 d-none d-md-block sidebar mt-5" style="background-color: #38f0f3">
+        <nav class="col-md-2 d-none d-md-block sidebar mt-5" style="background-color: #0cdaa6">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="/#/">
+                <a class="nav-link active" href="/#/" tabindex="1">
                   <span data-feather="Chart"></span>
                   Pie Chart
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/#/us-cases">
+                <a class="nav-link" href="/#/us-cases" tabindex="1">
                   <span data-feather="file"></span> 
                   USA Statewise Data
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/#/timeline" tabindex="1">
                   <span data-feather="users"></span>
                   Timeline Graph
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="layers"></span>
+                <a class="nav-link" href="#" tabindex="1">
+                  <span data-feather="layers" ></span>
                   Donut Chart
                 </a>
               </li>
@@ -55,8 +55,17 @@
         </main>
 
       </div>
+      
     </div>
-
+    <footer class="footer"style="background-color: #116466; color:white">
+      <!-- <div class="container">
+        <span>Place sticky footer content here.</span>
+      </div> -->
+      <!-- Copyright -->
+      <div class="footer-copyright text-right">© 2020 Copyright
+      </div>
+      <!-- Copyright -->
+    </footer>
 
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
@@ -68,16 +77,19 @@
 
 <style lang="css">
 
-  ul.nav li a, ul.nav li a:visited {
-    color: white !important;
-  }
+a {   
+    color: white; 
+    font-weight: bold;  
+}
 
-  ul.nav li a:hover {
-      color: rgb(234, 22, 22) !important;
-  }
+a:active {
+    color: black;
+}
 
-  ul.nav li:active a {
-      color: black !important;
-  } 
+a[tabindex]:focus {
+    color: black;
+    outline: none;
+}
+
 </style>
   

@@ -20,6 +20,7 @@
             :names="names"
             :active-index="[ 0, 2 ]"
             :active-event="'click'"
+            :colors="[ '#9c5a03', '#c70000', '#0b9c03' ]"
             :show-text-type="'outside'"
             :data-format="dataFormat">
         <legends :names="names"></legends>
