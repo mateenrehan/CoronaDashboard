@@ -1,7 +1,8 @@
 <template lang="html">
-  <div class="table-responsive">
+  <div class="table-responsive col-md-10">
+    <H5>* ALL Columns are Sortable</H5>
     <b-spinner label="Spinning" v-if='loading' style="margin: 300px 500px"></b-spinner>
-    <ag-grid-vue style="width: 1000px; height: 510px;"
+    <ag-grid-vue v-if='!loading' style="width: 800px; height: 510px;"
       class="ag-theme-balham table-responsive"
       :columnDefs="columnDefs"
       :rowData="rowData">
@@ -38,20 +39,16 @@ export default {
       const response= await USCasesAPI.getUSCasesData()
       console.log("Response:" ,response.data)
       this.data = [{
-        row: response.data[0],
-        // confirmed: response.data[0].latest,
-        // deaths: response.data[0].latest.deaths,
-        // recovered: response.data[0].latest.recovered
+        row: response.data[0]
       }]
       this.columnDefs = [
         {headerName: 'State Name', field: 'stateName', sortable:true},
         {headerName: 'County Name', field:'countyName', sortable:true},
         {headerName: 'Number of Cases',field: 'numberOfCases', sortable:true},
-        {headerName: 'Number of Deaths', field: 'numberOfDeaths', sortable:true},
-        {headerName: 'Number of Recovered', field: 'numberOfRecovered', sortable:true},
+        {headerName: 'Number of Deaths', field: 'numberOfDeaths', sortable:true}
       ]
       response.data[0].forEach(row => {
-        this.rowData.push({stateName: row.province, countyName: row.county, numberOfCases: row.latest.confirmed, numberOfDeaths: row.latest.deaths, numberOfRecovered: row.latest. rocovered});
+        this.rowData.push({stateName: row.province, countyName: row.county, numberOfCases: row.latest.confirmed, numberOfDeaths: row.latest.deaths});
       });
       this.loading = false;
       console.log(this.rowData);

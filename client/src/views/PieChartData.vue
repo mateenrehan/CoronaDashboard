@@ -1,35 +1,35 @@
 <template lang="html">
-  <div>
-    <div class="btn-group mr-4" role="group" aria-label="Third group">
+  <div class = "col-md-10">
+    <div class="btn-group mr-4 mt-2" role="group" aria-label="Third group">
       <button type="button" class="btn btn-dark" v-on:click="change('usa')">USA</button>
     </div>
-    <div class="btn-group mr-4" role="group" aria-label="Third group">
+    <div class="btn-group mr-4 mt-2" role="group" aria-label="Third group">
       <button type="button" class="btn btn-dark" v-on:click="change('worldwide')">Worldwide</button>
     </div>
-    <div class="btn-group mr-4" role="group" aria-label="Third group">
+    <div class="btn-group mr-4 mt-2" role="group" aria-label="Third group">
       <button type="button" class="btn btn-dark" v-on:click="change('italy')">Italy</button>
     </div>
-     <div class="btn-group mr-4" role="group" aria-label="Third group">
+     <div class="btn-group mr-4 mt-2" role="group" aria-label="Third group">
       <button type="button" class="btn btn-dark" v-on:click="change('canada')">Canada</button>
     </div>
-      <div class="btn-group mr-4" role="group" aria-label="Third group">
+      <div class="btn-group mr-4 mt-2" role="group" aria-label="Third group">
       <button type="button" class="btn btn-dark" v-on:click="change('iran')">Iran</button>
     </div>
-      <div class="btn-group mr-4" role="group" aria-label="Third group">
+      <div class="btn-group mr-4 mt-2" role="group" aria-label="Third group">
       <button type="button" class="btn btn-dark" v-on:click="change('germany')">Germany</button>
     </div>
-      <div class="btn-group mr-4" role="group" aria-label="Third group">
+      <div class="btn-group mr-4 mt-2" role="group" aria-label="Third group">
       <button type="button" class="btn btn-dark" v-on:click="change('uk')">UK</button>
     </div>
-      <div class="btn-group mr-4" role="group" aria-label="Third group">
+      <div class="btn-group mr-4 mt-2" role="group" aria-label="Third group">
       <button type="button" class="btn btn-dark" v-on:click="change('china')">China</button>
     </div>
-      <div class="btn-group" role="group" aria-label="Third group">
+      <div class="btn-group mr-4 mt-2" role="group" aria-label="Third group">
       <button type="button" class="btn btn-dark" v-on:click="change('india')">India</button>
     </div>
     <graph-pie
-            :width="500"
-            :height="500"
+            :width="400"
+            :height="400"
             :padding-top="100"
             :padding-bottom="100"
             :padding-left="100"
